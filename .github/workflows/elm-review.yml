@@ -1,0 +1,8 @@
+on: push
+name: Elm review
+jobs:
+  elm_review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: sparksp/elm-review-action@v1.0.6
