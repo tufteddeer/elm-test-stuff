@@ -6,3 +6,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: sparksp/elm-review-action@v1.0.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
