@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: yarn
+      - name: Add elm-format to path
+        run: yarn bin >> $GITHUB_PATH
       - uses: sparksp/elm-review-action@v1.0.6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
