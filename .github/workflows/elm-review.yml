@@ -4,12 +4,16 @@ jobs:
   elm_review:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
 
       - uses: actions/checkout@v2
       - run: yarn --frozen-lockfile
       - name: Add elm-review, elm and elm-format to path
         run: yarn bin >> $GITHUB_PATH
+      - run: ls 
       - uses: sparksp/elm-review-action@v1
+        with:
+          elm_review: elm-review
+          elm_format: elm-format
+          elm_compiler: elm
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
