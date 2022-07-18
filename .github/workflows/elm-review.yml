@@ -5,15 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
-      - name: Setup Elm environment
-        uses: JorelAli/setup-elm@v3
 
-      - run: yarn
-      - name: Add elm-review to path
+      - uses: actions/checkout@v2
+      - run: yarn --frozen-lockfile
+      - name: Add elm-review, elm and elm-format to path
         run: yarn bin >> $GITHUB_PATH
-        
-      - run: ls
       - uses: sparksp/elm-review-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
