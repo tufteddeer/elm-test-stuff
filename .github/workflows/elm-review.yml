@@ -13,6 +13,7 @@ jobs:
       - name: Add elm-review to path
         run: yarn bin >> $GITHUB_PATH
         
+      - run: ls
       - uses: sparksp/elm-review-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
