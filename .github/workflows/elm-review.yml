@@ -9,10 +9,10 @@ jobs:
       - run: yarn --frozen-lockfile
       - name: Add elm-review, elm and elm-format to path
         run: yarn bin >> $GITHUB_PATH
-      - run: ls 
+
       - uses: sparksp/elm-review-action@v1.0.6
         with:
           working-directory: ${{ github.workspace }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: elm-review
+

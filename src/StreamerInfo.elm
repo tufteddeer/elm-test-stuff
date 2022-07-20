@@ -27,6 +27,8 @@ maxLengthString : Int -> String -> String
 maxLengthString n s =
     let
         len =
+        
+        
             String.length s
     in
     if len <= n then
